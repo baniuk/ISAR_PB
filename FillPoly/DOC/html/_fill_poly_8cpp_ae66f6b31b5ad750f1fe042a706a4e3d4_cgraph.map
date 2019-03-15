@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty." alt="" coords="227,5,354,32"/>
+<area shape="rect" id="node5" href="$c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie." alt="" coords="109,93,174,120"/>
+<area shape="rect" id="node8" href="$c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku." alt="" coords="249,81,333,108"/>
+<area shape="rect" id="node10" href="$c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010" title="zwraca punkt przecięcia prostych" alt="" coords="242,132,339,159"/>
+<area shape="rect" id="node13" href="$fillpoly__debug_8m.html#a08c74199645806ef2c04f6cb2d4732aa" title="L0" alt="" coords="122,195,161,221"/>
+<area shape="rect" id="node15" href="$fillpoly__debug_8m.html#a295fb8559f051c3643e35841426794e9" title="L1" alt="" coords="122,245,161,272"/>
+<area shape="rect" id="node18" href="$c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678" title="Generuje liniowo N wartości w przedziale &lt;a;b&gt;" alt="" coords="104,296,179,323"/>
+</map>

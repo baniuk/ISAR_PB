@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_ImIndex.mexw64"
+EXPORTS mexFunction

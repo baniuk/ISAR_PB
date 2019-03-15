@@ -1,0 +1,4 @@
+threads(4);
+chdir('g:\\Documenty\\Visual Studio 2008\\Projects\\ISAR_Cuda\\CudaTest1');
+img = readtiff('T_14-32-53_836A.tif');
+out_med = fastmedianmp(img,0,25,25);

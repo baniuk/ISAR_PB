@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Plik źródłowy FillPoly/cFillPoly.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">FillPoly/cFillPoly.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="c_fill_poly_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="_geom_8h.html">Geom.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;fstream&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00017"></a>00017 
+<a name="l00019"></a>00019 <span class="keywordtype">void</span> <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>*,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>*,<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a>*);
+<a name="l00021"></a>00021 <span class="keywordtype">void</span> <a class="code" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678" title="Generuje liniowo N wartości w przedziale &lt;a;b&gt;">Linspace</a>(<span class="keywordtype">double</span>,<span class="keywordtype">double</span>,<span class="keywordtype">double</span>*,<span class="keywordtype">int</span>);
+<a name="l00023"></a>00023 <span class="keywordtype">void</span> <a class="code" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku.">getSection</a>(<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>,<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a>,<span class="keywordtype">int</span>,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>*);
+<a name="l00025"></a>00025 <span class="keywordtype">bool</span> <a class="code" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010" title="zwraca punkt przecięcia prostych">LineCutsLine</a>(<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a>*,<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a>*,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>*);
+<a name="l00027"></a>00027 <span class="keywordtype">bool</span> <a class="code" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie.">FillPoly</a>(<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>*,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>*);
+<a name="l00028"></a>00028 
+<a name="l00037"></a><a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a">00037</a> <span class="keywordtype">void</span> <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>( <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *P1,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *P2,<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a> *L)
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039         <span class="keywordtype">double</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>,b;
+<a name="l00040"></a>00040         <span class="keywordtype">bool</span> status;
+<a name="l00041"></a>00041         <span class="keywordflow">if</span> (P2-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a> - P1-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a> == 0)
+<a name="l00042"></a>00042         {
+<a name="l00043"></a>00043                 a = b = P1-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>;
+<a name="l00044"></a>00044                 status = <span class="keyword">true</span>; <span class="comment">// prosta pionowa</span>
+<a name="l00045"></a>00045         } <span class="keywordflow">else</span>
+<a name="l00046"></a>00046         {
+<a name="l00047"></a>00047                 a = (P2-&gt;<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a> - P1-&gt;<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a>)/(P2-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a> - P1-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>);
+<a name="l00048"></a>00048                 b = P2-&gt;<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a> - a*P2-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>;
+<a name="l00049"></a>00049                 status = <span class="keyword">false</span>;
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051         L-&gt;<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a> = <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>;
+<a name="l00052"></a>00052         L-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a> = b;
+<a name="l00053"></a>00053         L-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a> = status;
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 
+<a name="l00064"></a><a class="code" href="c_fill_poly_8cpp.html#ae6763fcc5cf3fa460337dc977d9afcff">00064</a> <span class="keywordtype">void</span> <a class="code" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678" title="Generuje liniowo N wartości w przedziale &lt;a;b&gt;">Linspace</a>( <span class="keywordtype">double</span> x1,<span class="keywordtype">double</span> x2,<span class="keywordtype">double</span> *out,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> N)
+<a name="l00065"></a>00065 {
+<a name="l00066"></a>00066         <span class="keywordtype">int</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>; <span class="comment">// musi byc int zeby sie nie wywalało</span>
+<a name="l00067"></a>00067         <span class="keywordtype">int</span> Ntmp = (int)N;
+<a name="l00068"></a>00068         <span class="keywordflow">for</span> (a=0;a&lt;=Ntmp-2;a++)
+<a name="l00069"></a>00069                 out[a] = x1 + a*(x2-x1)/(Ntmp-1);
+<a name="l00070"></a>00070         out[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>] = x2;
+<a name="l00071"></a>00071 }
+<a name="l00072"></a>00072 
+<a name="l00084"></a><a class="code" href="c_fill_poly_8cpp.html#a8a34ae0e3178178f3379183eb3a72bc4">00084</a> <span class="keywordtype">void</span> <a class="code" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku.">getSection</a>( <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> P0,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> P1,<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a> L,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> N,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *out)
+<a name="l00085"></a>00085 {
+<a name="l00086"></a>00086         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>;
+<a name="l00087"></a>00087         <span class="keywordtype">double</span> *px = <span class="keyword">new</span> <span class="keywordtype">double</span>[N];     <span class="comment">// tablica na punkty z linspace</span>
+<a name="l00088"></a>00088         <span class="keywordflow">if</span> (L.<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a>)
+<a name="l00089"></a>00089         {<span class="comment">// Pionowa</span>
+<a name="l00090"></a>00090                 <a class="code" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678" title="Generuje liniowo N wartości w przedziale &lt;a;b&gt;">Linspace</a>(P0.<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a>,P1.<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a>,px,N);
+<a name="l00091"></a>00091                 <span class="keywordflow">for</span>(a=0;a&lt;N;a++) 
+<a name="l00092"></a>00092                 {
+<a name="l00093"></a>00093                         out[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>].<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a> = P0.<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>; 
+<a name="l00094"></a>00094                         out[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>].<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a> = px[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>];
+<a name="l00095"></a>00095                 }               
+<a name="l00096"></a>00096         } 
+<a name="l00097"></a>00097         <span class="keywordflow">else</span>
+<a name="l00098"></a>00098         {<span class="comment">// Inna</span>
+<a name="l00099"></a>00099                 <a class="code" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678" title="Generuje liniowo N wartości w przedziale &lt;a;b&gt;">Linspace</a>(P0.<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>,P1.<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>,px,N);
+<a name="l00100"></a>00100                 <span class="keywordflow">for</span> (a=0;a&lt;N;a++)
+<a name="l00101"></a>00101                 {
+<a name="l00102"></a>00102                         out[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>].<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a> = px[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>];
+<a name="l00103"></a>00103                         out[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>].<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a> = L.<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a>*px[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>]+L.<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>;
+<a name="l00104"></a>00104                 }
+<a name="l00105"></a>00105         }
+<a name="l00106"></a>00106         <span class="keyword">delete</span>[] px;
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00120"></a><a class="code" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010">00120</a> <span class="keywordtype">bool</span> <a class="code" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010" title="zwraca punkt przecięcia prostych">LineCutsLine</a>( <a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a> *<a class="code" href="fillpoly__debug_8m.html#a08c74199645806ef2c04f6cb2d4732aa">L0</a>,<a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a> *<a class="code" href="fillpoly__debug_8m.html#a295fb8559f051c3643e35841426794e9">L1</a>,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *P)
+<a name="l00121"></a>00121 {
+<a name="l00122"></a>00122         <span class="keywordtype">double</span> xtmp=0,ytmp=0;
+<a name="l00123"></a>00123         <span class="keywordflow">if</span> (L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a> &amp;&amp; L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a>) <span class="comment">// obie pionowe</span>
+<a name="l00124"></a>00124                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00125"></a>00125         <span class="keywordflow">if</span> (L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a> &amp;&amp; !L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a>) <span class="comment">// pierwsza pionowa druga nie</span>
+<a name="l00126"></a>00126         {
+<a name="l00127"></a>00127                 xtmp = L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>;
+<a name="l00128"></a>00128                 ytmp = L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a>*xtmp+L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>;
+<a name="l00129"></a>00129         }
+<a name="l00130"></a>00130         <span class="keywordflow">if</span> (!L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a> &amp;&amp; L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a>)      <span class="comment">// druga pionowa, piersza normalna</span>
+<a name="l00131"></a>00131         {
+<a name="l00132"></a>00132                 xtmp = L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>;
+<a name="l00133"></a>00133                 ytmp = L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a>*xtmp+L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>;
+<a name="l00134"></a>00134         }
+<a name="l00135"></a>00135         <span class="keywordflow">if</span> (!L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a> &amp;&amp; !L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aac3be45e4a41155deb151e2dcf7a9f17">pion</a>)     <span class="comment">// obie niepionowe</span>
+<a name="l00136"></a>00136         {
+<a name="l00137"></a>00137                 xtmp = (L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a> - L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>)/(L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a> - L1-&gt;<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a>);
+<a name="l00138"></a>00138                 ytmp = L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#a826038314575408ce3600b4a292b5cbb">a</a>*xtmp+L0-&gt;<a class="code" href="struct_l_i_n_i_a.html#aff0883f9bd115c3b40f29afc1ed53565">b</a>;
+<a name="l00139"></a>00139         }
+<a name="l00140"></a>00140         P-&gt;<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a> = xtmp;
+<a name="l00141"></a>00141         P-&gt;<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a> = ytmp;
+<a name="l00142"></a>00142         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00143"></a>00143 }
+<a name="l00144"></a>00144 
+<a name="l00158"></a><a class="code" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205">00158</a> <span class="keywordtype">bool</span> <a class="code" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie.">FillPoly</a>( <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *p_in,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ile_w, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> g,<a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *p_out)
+<a name="l00159"></a>00159 {
+<a name="l00160"></a>00160         <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> PA, PB, PC, PD; <span class="comment">// punkty wierzchołków</span>
+<a name="l00161"></a>00161         <a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a> L_AB, L_BC, L_CD, L_DA; <span class="comment">// linie krawędzi</span>
+<a name="l00162"></a>00162         <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> *P_L_AB, *P_L_BC, *P_L_CD, *P_L_DA; <span class="comment">// tablice zawierające punkty leżące na krawędziech - wykorzystane później do generowania linii równoległych do krawędzi</span>
+<a name="l00163"></a>00163         <a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a> *L_PION, *L_POZIOM;       <span class="comment">// tablice zawierające linie pomiędzy naprzeciwległym ściankami (ich punktami z tablic P_L_XX)</span>
+<a name="l00164"></a>00164         <span class="keywordtype">bool</span> ret;
+<a name="l00165"></a>00165         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>,b,licznik;
+<a name="l00166"></a>00166         <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> P;
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168         PA = p_in[0]; PB = p_in[1]; PC = p_in[2]; PD = p_in[3];
+<a name="l00169"></a>00169         <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(&amp;PA,&amp;PB,&amp;L_AB);
+<a name="l00170"></a>00170         <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(&amp;PB,&amp;PC,&amp;L_BC);
+<a name="l00171"></a>00171         <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(&amp;PD,&amp;PC,&amp;L_CD);
+<a name="l00172"></a>00172         <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(&amp;PA,&amp;PD,&amp;L_DA); 
+<a name="l00174"></a>00174         <span class="comment">// podział linii na tą samą ilość punktów</span>
+<a name="l00175"></a>00175         P_L_AB = <span class="keyword">new</span> <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>[g]; P_L_BC = <span class="keyword">new</span> <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>[g]; P_L_CD = <span class="keyword">new</span> <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>[g]; P_L_DA = <span class="keyword">new</span> <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>[g];
+<a name="l00176"></a>00176         <a class="code" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku.">getSection</a>(PA,PB,L_AB,g,P_L_AB);
+<a name="l00177"></a>00177         <a class="code" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku.">getSection</a>(PB,PC,L_BC,g,P_L_BC);
+<a name="l00178"></a>00178         <a class="code" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku.">getSection</a>(PD,PC,L_CD,g,P_L_CD);
+<a name="l00179"></a>00179         <a class="code" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku.">getSection</a>(PA,PD,L_DA,g,P_L_DA);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181         <span class="comment">// generowanie naprzeciwległych linii</span>
+<a name="l00182"></a>00182         L_PION = <span class="keyword">new</span> <a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a>[g];
+<a name="l00183"></a>00183         L_POZIOM = <span class="keyword">new</span> <a class="code" href="struct_l_i_n_i_a.html" title="struktura opisująca prostą w przestrzeni">LINIA</a>[g];
+<a name="l00184"></a>00184         <span class="keywordflow">for</span> (a=0;a&lt;g;a++)
+<a name="l00185"></a>00185         {
+<a name="l00186"></a>00186                 <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(P_L_AB+a,P_L_CD+a,&amp;L_PION[a]);
+<a name="l00187"></a>00187                 <a class="code" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty.">DefineLine2Points</a>(P_L_BC+a,P_L_DA+a,&amp;L_POZIOM[a]);
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         }
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191         <span class="comment">// generowanie punktów przecięcia</span>
+<a name="l00192"></a>00192         licznik = 0;
+<a name="l00193"></a>00193         <span class="keywordflow">for</span>(a=0;a&lt;g;a++)
+<a name="l00194"></a>00194                 <span class="keywordflow">for</span> (b=0;b&lt;g;b++)
+<a name="l00195"></a>00195                 {
+<a name="l00196"></a>00196                         ret = <a class="code" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010" title="zwraca punkt przecięcia prostych">LineCutsLine</a>(L_PION+a,L_POZIOM+b,&amp;P);
+<a name="l00197"></a>00197                         <span class="keywordflow">if</span>(!ret)        <span class="comment">// jeśli się nie przetną</span>
+<a name="l00198"></a>00198                         {
+<a name="l00199"></a>00199                                 std::cerr &lt;&lt; <span class="stringliteral">&quot;Linie się nie przecieły\n&quot;</span>;
+<a name="l00200"></a>00200                                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00201"></a>00201                         }
+<a name="l00202"></a>00202                         p_out[licznik++] = P;
+<a name="l00203"></a>00203                 }
+<a name="l00204"></a>00204                 
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206         <span class="keyword">delete</span>[] P_L_AB; <span class="keyword">delete</span>[] P_L_BC; <span class="keyword">delete</span>[] P_L_CD; <span class="keyword">delete</span>[] P_L_DA;
+<a name="l00207"></a>00207         <span class="keyword">delete</span>[] L_POZIOM; <span class="keyword">delete</span>[] L_PION;
+<a name="l00208"></a>00208         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00209"></a>00209 }
+</pre></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

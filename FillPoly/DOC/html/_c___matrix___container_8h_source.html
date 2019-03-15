@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Plik źródłowy SDK/C_Matrix_Container.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">SDK/C_Matrix_Container.h</div>  </div>
+</div>
+<div class="contents">
+<a href="_c___matrix___container_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a name="l00002"></a><a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">00002</a> <span class="preprocessor"></span><span class="preprocessor">#define SAFE_DELETE(p)       { if(p) { delete (p);     (p)=NULL; } }</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &lt;windows.h&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;crtdbg.h&gt;</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="comment">// Ver 1.3.1 by PB</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="class_c___matrix___container.html">00010</a> <span class="keyword">class </span><a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 <span class="keyword">public</span>:
+<a name="l00013"></a>00013         <a class="code" href="class_c___matrix___container.html#a4983f5f6bc7e5084269bd4295d3e0c6f">C_Matrix_Container</a>(<span class="keywordtype">void</span>);
+<a name="l00014"></a><a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">00014</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>, <a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>;
+<a name="l00015"></a><a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">00015</a>         <span class="keywordtype">double</span>* <a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>;
+<a name="l00016"></a>00016         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#ac52fe2a955352b6fa3924806c085d106">AllocateData</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rows, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cols);
+<a name="l00017"></a>00017         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a57f2e83d6ff9b668a14ecd2d808cbed8">Zeros</a>(<span class="keywordtype">void</span>);
+<a name="l00018"></a>00018         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#ac6bafca89987950db19e2a92efcb3054">Ones</a>(<span class="keywordtype">void</span>);
+<a name="l00019"></a>00019         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#ae88e3c7817d7c23cd62b4c04ee72aae1">FreeData</a>(<span class="keywordtype">void</span>);
+<a name="l00020"></a>00020         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a2334fe41954a40e59e35fb720e0bbc2e">CloneObject</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* dest);
+<a name="l00021"></a>00021         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#afc2c6d373308421c7ac593ed74d50f9e">GetPixel</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> row, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> col,<span class="keywordtype">double</span>&amp;pixel);
+<a name="l00022"></a>00022         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a64772151fe580caab120bc82c6fab765">ImportFromMatlab</a>(<span class="keywordtype">double</span>* in,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> row, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> col);
+<a name="l00023"></a>00023         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#ad1098f96c741024fe9271490cb9e664d">ExportToMatlab</a>(<span class="keywordtype">double</span>* out);
+<a name="l00024"></a>00024         <span class="keywordtype">double</span> <a class="code" href="class_c___matrix___container.html#afc2c6d373308421c7ac593ed74d50f9e">GetPixel</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> row, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> col);
+<a name="l00025"></a>00025         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_c___matrix___container.html#a9164025572f97d3dd13f831ded9255f0">coord2lin</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> row, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> col);
+<a name="l00026"></a>00026         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a857d6851721c99b77d0c6c20887d93ec">SetPixel</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> row, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> col,<span class="keywordtype">double</span> pixel);
+<a name="l00027"></a>00027         BOOL <a class="code" href="class_c___matrix___container.html#acf7fe6f7f7a9d4fadf67160492c37cff">Add</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* matrix);
+<a name="l00028"></a>00028         BOOL <a class="code" href="class_c___matrix___container.html#a680bf5983de4600359eecc1e9ee4a261">Sub</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* matrix);
+<a name="l00029"></a>00029         BOOL <a class="code" href="class_c___matrix___container.html#a4a6a134a3397152079be0c14bdf69e02">DotMulti</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* matrix);
+<a name="l00030"></a>00030         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a73c44a9a581fb814e6f6c58d6e355d42">getMinMax</a>(<span class="keywordtype">double</span>&amp; min, <span class="keywordtype">double</span>&amp; max);
+<a name="l00031"></a>00031         BOOL <a class="code" href="class_c___matrix___container.html#a4629ddeef6f0d494bb818bff6aadef27">Dump</a>(<span class="keywordtype">char</span>* filename);
+<a name="l00032"></a>00032         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#abd74b3aca4a4710cd52ca890d51d1f2d">Transpose</a>(<span class="keywordtype">void</span>);
+<a name="l00033"></a>00033         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_c___matrix___container.html#a04b69dcdd05624842f65392ee64d0197">GetNumofElements</a>(<span class="keywordtype">void</span>);
+<a name="l00034"></a>00034         BOOL <a class="code" href="class_c___matrix___container.html#a53663d03cc19cdbfcbe984240aa0c00f">DumpBinary</a>(<span class="keywordtype">char</span> *filename);
+<a name="l00035"></a>00035         BOOL <a class="code" href="class_c___matrix___container.html#a06804a7fb85cab6b0633cdd71426ca4d">ReadBinary</a>(<span class="keywordtype">char</span> *filename);
+<a name="l00036"></a>00036         <span class="keywordtype">double</span> <a class="code" href="class_c___matrix___container.html#accf538c1968b0d4a6eb44d58b832c7c9">Mean</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* out,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> col);
+<a name="l00037"></a>00037         <span class="keywordtype">double</span> <a class="code" href="class_c___matrix___container.html#aaaf46be1c711c4ab1972e5da954fed3f">Median</a>(<span class="keywordtype">void</span>);
+<a name="l00038"></a>00038         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#add33c611bf216b90b9c628fe60243a79">stdcol</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* output);
+<a name="l00039"></a>00039         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a20a948bc070b27cfb2cc945fb4a0923b">std</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* output);
+<a name="l00040"></a>00040         <span class="keywordtype">double</span> <a class="code" href="class_c___matrix___container.html#a20a948bc070b27cfb2cc945fb4a0923b">std</a>(<span class="keywordtype">void</span>);
+<a name="l00041"></a>00041         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a368a76508f7ebb1341cc95e156bc2f1e">CutMatrixCol</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* output, <a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* cols);
+<a name="l00042"></a>00042         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#ac4b942538e8b6a85e77fc2b8cdad8dbc">CutMatrixRow</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* output, <a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* rows);
+<a name="l00043"></a>00043         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a92b00429deac120c19129d15fc3acb9d">RemoveMatrixRow</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* index);
+<a name="l00044"></a>00044         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#a20510d2e6db92790aa7b41c2ea5b4f0d">RemoveMatrixCol</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* index);
+<a name="l00045"></a>00045         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_c___matrix___container.html#a26fdff496c4d9394e6c6f3032b372480">iselement</a>(<span class="keywordtype">double</span> element);
+<a name="l00046"></a>00046         <span class="keywordtype">void</span> <a class="code" href="class_c___matrix___container.html#ab5e52faafc5e49f4ff7e63bf72983f97">quickSort</a>( <span class="keywordtype">double</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>[], <span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r);
+<a name="l00047"></a>00047         <span class="keyword">virtual</span> <a class="code" href="class_c___matrix___container.html#af22601368b23af64818b95dbb9767c7c">~C_Matrix_Container</a>(<span class="keywordtype">void</span>);
+<a name="l00048"></a>00048 <span class="keyword">private</span>:
+<a name="l00049"></a>00049         <span class="keywordtype">int</span> <a class="code" href="class_c___matrix___container.html#a848cbb4d3649f155ddb6c14d448f6795">partition</a>( <span class="keywordtype">double</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>[], <span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r);
+<a name="l00050"></a>00050 };
+</pre></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

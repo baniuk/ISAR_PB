@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Plik źródłowy FillPoly/C_myDumpAll.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">FillPoly/C_myDumpAll.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_c__my_dump_all_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_c__my_dump_all_8h.html">C_myDumpAll.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 
+<a name="l00010"></a><a class="code" href="class_c__my_dump_all.html#afadf32b0408b1e5a6de2ea2a168498ea">00010</a> <a class="code" href="class_c__my_dump_all.html#afadf32b0408b1e5a6de2ea2a168498ea" title="Konstruktor inicjalizujący obie klasy.">C_myDumpAll::C_myDumpAll</a>(<span class="keywordtype">char</span>* filename):<a class="code" href="class_c___dump_all.html">C_DumpAll</a>(filename)
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 }
+<a name="l00014"></a>00014 
+<a name="l00027"></a><a class="code" href="class_c__my_dump_all.html#a9eab22b8f5595d3a4d60e6f28d360259">00027</a> <span class="keywordtype">void</span> <a class="code" href="class_c__my_dump_all.html#a9eab22b8f5595d3a4d60e6f28d360259" title="Zgrywa tablice struktur PUNKT.">C_myDumpAll::POINTAddEntry</a>( <a class="code" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">char</span>* name )
+<a name="l00028"></a>00028 {
+<a name="l00029"></a>00029         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> l;
+<a name="l00030"></a>00030         <span class="keywordtype">double</span> *x, *y;
+<a name="l00031"></a>00031         std::string _x(name);
+<a name="l00032"></a>00032         std::string _y(name);
+<a name="l00033"></a>00033         <span class="keywordtype">char</span> *cstr;
+<a name="l00034"></a>00034         x = <span class="keyword">new</span> <span class="keywordtype">double</span>[size];
+<a name="l00035"></a>00035         y = <span class="keyword">new</span> <span class="keywordtype">double</span>[size];
+<a name="l00036"></a>00036         <span class="comment">// kopiowanie do tablicy tymczasowej</span>
+<a name="l00037"></a>00037         <span class="keywordflow">for</span>(l=0;l&lt;size;l++)
+<a name="l00038"></a>00038         {
+<a name="l00039"></a>00039                 x[l] = data[l].<a class="code" href="struct_p_u_n_k_t.html#a69844041fb0efc8c115262e720887c64">x</a>;
+<a name="l00040"></a>00040                 y[l] = data[l].<a class="code" href="struct_p_u_n_k_t.html#aff60d456804c310ce1799368f2e9866f">y</a>;
+<a name="l00041"></a>00041         }
+<a name="l00042"></a>00042         <span class="comment">// nowe nazwy na bazie bazy</span>
+<a name="l00043"></a>00043         _x += <span class="stringliteral">&quot;_X&quot;</span>;
+<a name="l00044"></a>00044         _y += <span class="stringliteral">&quot;_Y&quot;</span>;
+<a name="l00052"></a>00052         cstr = <span class="keyword">new</span> <span class="keywordtype">char</span>[_x.size()+1];
+<a name="l00053"></a>00053         strcpy(cstr, _x.c_str());
+<a name="l00054"></a>00054         <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">C_DumpAll::AddEntry</a>(x,size,cstr);
+<a name="l00055"></a>00055         strcpy(cstr, _y.c_str());
+<a name="l00056"></a>00056         <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">C_DumpAll::AddEntry</a>(y,size,cstr);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059         <span class="keyword">delete</span>[] x;
+<a name="l00060"></a>00060         <span class="keyword">delete</span>[] y;
+<a name="l00061"></a>00061         <span class="keyword">delete</span>[] cstr;
+<a name="l00062"></a>00062 }
+<a name="l00063"></a>00063 
+<a name="l00064"></a><a class="code" href="class_c__my_dump_all.html#a009d25fbdfd9c775ac7287d105bb0420">00064</a> <a class="code" href="class_c__my_dump_all.html#a009d25fbdfd9c775ac7287d105bb0420">C_myDumpAll::~C_myDumpAll</a>(<span class="keywordtype">void</span>)
+<a name="l00065"></a>00065 {
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 }
+</pre></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

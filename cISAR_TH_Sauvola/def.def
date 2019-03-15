@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_TH_Sauvola.mexw64"
+EXPORTS mexFunction

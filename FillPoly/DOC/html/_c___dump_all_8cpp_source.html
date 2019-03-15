@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Plik źródłowy SDK/C_DumpAll.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">SDK/C_DumpAll.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_c___dump_all_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_c___dump_all_8h.html">C_DumpAll.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="class_c___dump_all.html#aa102b74cb1617f552476d55c1fcd206f">00003</a> <a class="code" href="class_c___dump_all.html#aa102b74cb1617f552476d55c1fcd206f">C_DumpAll::C_DumpAll</a>(<span class="keywordtype">char</span>* filename)
+<a name="l00004"></a>00004 {
+<a name="l00005"></a>00005 <span class="preprocessor">#ifdef _DEBUG</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>;
+<a name="l00007"></a>00007         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data=0;
+<a name="l00008"></a>00008         <span class="keywordflow">if</span>( fopen_s( &amp;<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>, filename, <span class="stringliteral">&quot;wb&quot;</span> ) == 0 )
+<a name="l00009"></a>00009         {
+<a name="l00010"></a>00010                 <a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a> = <span class="keyword">false</span>;
+<a name="l00011"></a>00011                 <a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a> = 0;
+<a name="l00012"></a>00012                 fwrite(&amp;data,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// ilosc wpisów</span>
+<a name="l00013"></a>00013                 <span class="keywordflow">for</span>(a=0;a&lt;<a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">MAX_ENTRY</a>;a++)
+<a name="l00014"></a>00014                         fwrite(&amp;data,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>); <span class="comment">// przesuwanie wskaznika pliku</span>
+<a name="l00015"></a>00015         } <span class="keywordflow">else</span>  {
+<a name="l00016"></a>00016                 _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: Cant open file&quot;</span>, NULL);
+<a name="l00017"></a>00017                 <a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a> = <span class="keyword">true</span>;
+<a name="l00018"></a>00018         }
+<a name="l00019"></a>00019 <span class="preprocessor">#endif</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>}
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="class_c___dump_all.html#a51aae2ba019b517279778d54d1b6b069">00022</a> <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">C_DumpAll::AddEntry</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* data, <span class="keywordtype">char</span>* name)
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type = <a class="code" href="_c___dump_all_8h.html#a6f41f1cda9345d127d86658eb0d45770">C_MATRIX</a>;
+<a name="l00025"></a>00025         <span class="keywordtype">long</span> position,<a class="code" href="_import_dump_file_8m.html#a471947becb0228a417eef67209eab2b6">ile</a>;
+<a name="l00026"></a>00026         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sl;
+<a name="l00027"></a>00027         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a>)
+<a name="l00028"></a>00028         {
+<a name="l00029"></a>00029 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00031"></a>00031 <span class="preprocessor">                #endif</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>        }
+<a name="l00033"></a>00033         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>&gt;=<a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">MAX_ENTRY</a>)     {
+<a name="l00034"></a>00034 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00036"></a>00036 <span class="preprocessor">                #endif</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>                <span class="keywordflow">return</span>;
+<a name="l00038"></a>00038         }
+<a name="l00039"></a>00039         sl = (<span class="keywordtype">unsigned</span> int)strlen(name);
+<a name="l00040"></a>00040         position = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);
+<a name="l00041"></a>00041         fwrite(&amp;type,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// typ</span>
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043         fwrite(&amp;data-&gt;<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);     <span class="comment">// rozmiar r</span>
+<a name="l00044"></a>00044         fwrite(&amp;data-&gt;<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);     <span class="comment">// rozmiar k</span>
+<a name="l00045"></a>00045         fwrite(data-&gt;<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>),data-&gt;<a class="code" href="class_c___matrix___container.html#a04b69dcdd05624842f65392ee64d0197">GetNumofElements</a>(),<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);              <span class="comment">// dane</span>
+<a name="l00046"></a>00046         fwrite(&amp;sl,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);              <span class="comment">// rozmiar nazwy</span>
+<a name="l00047"></a>00047         fwrite(name,<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>),sl,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);                    <span class="comment">// nazwa</span>
+<a name="l00048"></a>00048         ile = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>) - position;
+<a name="l00049"></a>00049         <a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">offset</a>[<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>] = (<span class="keywordtype">unsigned</span> long)ile; <span class="comment">//ilosc zzpisanych bajtów</span>
+<a name="l00050"></a>00050         <a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>++;
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="class_c___dump_all.html#ab1785174de5d04b20e9bb8cfa356c9ad">00053</a> <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">C_DumpAll::AddEntry</a>(<a class="code" href="class_c___image___container.html">C_Image_Container</a>* data, <span class="keywordtype">char</span>* name)
+<a name="l00054"></a>00054 {
+<a name="l00055"></a>00055         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type = <a class="code" href="_c___dump_all_8h.html#a5a3e65bae257d28620da54d3ed549442">C_IMAGE</a>;
+<a name="l00056"></a>00056         <span class="keywordtype">long</span> position,<a class="code" href="_import_dump_file_8m.html#a471947becb0228a417eef67209eab2b6">ile</a>;
+<a name="l00057"></a>00057         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sl;
+<a name="l00058"></a>00058         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a>)
+<a name="l00059"></a>00059         {
+<a name="l00060"></a>00060 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00062"></a>00062 <span class="preprocessor">                #endif</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span>        }
+<a name="l00064"></a>00064         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>&gt;=<a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">MAX_ENTRY</a>)     {
+<a name="l00065"></a>00065 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00067"></a>00067 <span class="preprocessor">                #endif</span>
+<a name="l00068"></a>00068 <span class="preprocessor"></span>                <span class="keywordflow">return</span>;
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070         sl = (<span class="keywordtype">unsigned</span> int)strlen(name);
+<a name="l00071"></a>00071         position = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);
+<a name="l00072"></a>00072         fwrite(&amp;type,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// typ</span>
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         fwrite(&amp;data-&gt;<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);     <span class="comment">// rozmiar r</span>
+<a name="l00075"></a>00075         fwrite(&amp;data-&gt;<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);     <span class="comment">// rozmiar k</span>
+<a name="l00076"></a>00076         fwrite(data-&gt;<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>),data-&gt;<a class="code" href="class_c___matrix___container.html#a04b69dcdd05624842f65392ee64d0197">GetNumofElements</a>(),<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);              <span class="comment">// dane</span>
+<a name="l00077"></a>00077         fwrite(&amp;sl,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);              <span class="comment">// rozmiar nazwy</span>
+<a name="l00078"></a>00078         fwrite(name,<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>),sl,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);                    <span class="comment">// nazwa</span>
+<a name="l00079"></a>00079         ile = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>) - position;
+<a name="l00080"></a>00080         <a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">offset</a>[<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>] = (<span class="keywordtype">unsigned</span> long)ile; <span class="comment">//ilosc zzpisanych bajtów</span>
+<a name="l00081"></a>00081         <a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>++;
+<a name="l00082"></a>00082 }
+<a name="l00083"></a>00083 
+<a name="l00084"></a><a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">00084</a> <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">C_DumpAll::AddEntry</a>(<span class="keywordtype">double</span>* data,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">char</span>* name)
+<a name="l00085"></a>00085 {
+<a name="l00086"></a>00086         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type = <a class="code" href="_c___dump_all_8h.html#a8747af38b86aa2bbcda2f1b1aa0888c2">DOUBLE</a>;
+<a name="l00087"></a>00087         <span class="keywordtype">long</span> position,<a class="code" href="_import_dump_file_8m.html#a471947becb0228a417eef67209eab2b6">ile</a>;
+<a name="l00088"></a>00088         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sl;
+<a name="l00089"></a>00089         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a>)
+<a name="l00090"></a>00090         {
+<a name="l00091"></a>00091 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00093"></a>00093 <span class="preprocessor">                #endif</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span>        }
+<a name="l00095"></a>00095         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>&gt;=<a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">MAX_ENTRY</a>)     {
+<a name="l00096"></a>00096 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00097"></a>00097 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00098"></a>00098 <span class="preprocessor">                #endif</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span>                <span class="keywordflow">return</span>;
+<a name="l00100"></a>00100         }
+<a name="l00101"></a>00101         sl = (<span class="keywordtype">unsigned</span> int)strlen(name);
+<a name="l00102"></a>00102         position = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);
+<a name="l00103"></a>00103         fwrite(&amp;type,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// typ</span>
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         fwrite(&amp;size,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// rozmiar</span>
+<a name="l00106"></a>00106         fwrite(data,<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>),size,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);                <span class="comment">// dane</span>
+<a name="l00107"></a>00107         fwrite(&amp;sl,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);              <span class="comment">// rozmiar nazwy</span>
+<a name="l00108"></a>00108         fwrite(name,<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>),sl,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);                    <span class="comment">// nazwa</span>
+<a name="l00109"></a>00109         ile = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>) - position;
+<a name="l00110"></a>00110         <a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">offset</a>[<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>] = (<span class="keywordtype">unsigned</span> long)ile; <span class="comment">//ilosc zzpisanych bajtów</span>
+<a name="l00111"></a>00111         <a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>++;
+<a name="l00112"></a>00112 }
+<a name="l00113"></a>00113 
+<a name="l00114"></a><a class="code" href="class_c___dump_all.html#afd9c000b3423d1ef3c9d4c2b3d2b6761">00114</a> <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">C_DumpAll::AddEntry</a>(<span class="keywordtype">float</span>* data,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">char</span>* name)
+<a name="l00115"></a>00115 {
+<a name="l00116"></a>00116         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type = <a class="code" href="_c___dump_all_8h.html#ae8690abbffa85934d64d545920e2b108">FLOAT</a>;
+<a name="l00117"></a>00117         <span class="keywordtype">long</span> position,<a class="code" href="_import_dump_file_8m.html#a471947becb0228a417eef67209eab2b6">ile</a>;
+<a name="l00118"></a>00118         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sl;
+<a name="l00119"></a>00119         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a>)
+<a name="l00120"></a>00120         {
+<a name="l00121"></a>00121 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00122"></a>00122 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00123"></a>00123 <span class="preprocessor">                #endif</span>
+<a name="l00124"></a>00124 <span class="preprocessor"></span>        }
+<a name="l00125"></a>00125         <span class="keywordflow">if</span>(<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>&gt;=<a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">MAX_ENTRY</a>)     {
+<a name="l00126"></a>00126 <span class="preprocessor">                #ifdef _DEBUG</span>
+<a name="l00127"></a>00127 <span class="preprocessor"></span>                _CrtDbgReport(_CRT_ASSERT, NULL, NULL, <span class="stringliteral">&quot;C_DumpAll: File not opened&quot;</span>, NULL);
+<a name="l00128"></a>00128 <span class="preprocessor">                #endif</span>
+<a name="l00129"></a>00129 <span class="preprocessor"></span>                <span class="keywordflow">return</span>;
+<a name="l00130"></a>00130         }
+<a name="l00131"></a>00131         sl = (<span class="keywordtype">unsigned</span> int)strlen(name);
+<a name="l00132"></a>00132         position = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);
+<a name="l00133"></a>00133         fwrite(&amp;type,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// typ</span>
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135         fwrite(&amp;size,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// rozmiar</span>
+<a name="l00136"></a>00136         fwrite(data,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>),size,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);         <span class="comment">// dane</span>
+<a name="l00137"></a>00137         fwrite(&amp;sl,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);              <span class="comment">// rozmiar nazwy</span>
+<a name="l00138"></a>00138         fwrite(name,<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>),sl,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);                    <span class="comment">// nazwa</span>
+<a name="l00139"></a>00139         ile = ftell(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>) - position;
+<a name="l00140"></a>00140         <a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">offset</a>[<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>] = (<span class="keywordtype">unsigned</span> long)ile; <span class="comment">//ilosc zzpisanych bajtów</span>
+<a name="l00141"></a>00141         <a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>++;
+<a name="l00142"></a>00142 }
+<a name="l00143"></a>00143 
+<a name="l00144"></a><a class="code" href="class_c___dump_all.html#a88e6ad8e1e407459db1489ca9693d9e0">00144</a> <a class="code" href="class_c___dump_all.html#a88e6ad8e1e407459db1489ca9693d9e0">C_DumpAll::~C_DumpAll</a>(<span class="keywordtype">void</span>)
+<a name="l00145"></a>00145 {
+<a name="l00146"></a>00146 <span class="preprocessor">#ifdef _DEBUG   </span>
+<a name="l00147"></a>00147 <span class="preprocessor"></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>;
+<a name="l00148"></a>00148         fseek(<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>,0,SEEK_SET);
+<a name="l00149"></a>00149         fwrite(&amp;<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);    <span class="comment">// ilosc wpisów</span>
+<a name="l00150"></a>00150         <span class="keywordflow">for</span>(a=0;a&lt;<a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>;a++)
+<a name="l00151"></a>00151                 fwrite(&amp;<a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">offset</a>[a],<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>),1,<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>);
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153         fclose( <a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a> );
+<a name="l00154"></a>00154 <span class="preprocessor">#endif</span>
+<a name="l00155"></a>00155 <span class="preprocessor"></span>}
+</pre></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

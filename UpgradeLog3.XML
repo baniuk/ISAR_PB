@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ISAR_PB">
+</Property><Property Name="Solution File" Value="C:\Users\SOLAR_G200\Documents\MATLAB\Myprojects_server\ISAR_PB\ISAR_PB.sln">
+</Property><Property Name="User Options File" Value="C:\Users\SOLAR_G200\Documents\MATLAB\Myprojects_server\ISAR_PB\ISAR_PB.suo">
+</Property><Property Name="Date" Value="5 grudnia 2011">
+</Property><Property Name="Time" Value="14:00">
+</Property><Property Name="Log Number" Value="3">
+</Property></Properties><Event ErrorLevel="2" Project="" Source="ISAR_PB.sln" Description="Error creating backup file: C:\Users\SOLAR_G200\Documents\MATLAB\Myprojects_server\ISAR_PB\ISAR_PB.sln.old">
+</Event><Event ErrorLevel="2" Project="" Source="ISAR_PB.suo" Description="Error creating backup file: C:\Users\SOLAR_G200\Documents\MATLAB\Myprojects_server\ISAR_PB\ISAR_PB.suo.old">
+</Event><Event ErrorLevel="3" Project="template" Source="template\template.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="SNR_Eval" Source="SNR_Eval\SNR_Eval.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="DumpAll" Source="DumpAll\DumpAll.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="IQI_Detect" Source="IQI_Detect\IQI_Detect.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="dISAR_ImIndex" Source="dISAR_ImIndex\dISAR_ImIndex.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="dISAR_HistEqual" Source="dISAR_HistEqual\dISAR_HistEqual.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="algtest" Source="ISAR_Cuda\algtest\algtest.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="dISAR_CalcFeatures" Source="dISAR_CalcFeatures\dISAR_CalcFeatures.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="PCALib" Source="PCALib\PCALib.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="dISAR_FastMedian" Source="dISAR_FastMedian\dISAR_FastMedian.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="ISAR_CudaMedian1" Source="ISAR_CudaMedian1\ISAR_CudaMedian1.vcproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="dISAR_GetProfile" Source="dISAR_GetProfile\dISAR_GetProfile.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="GetProfile" Source="GetProfile\GetProfile.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="ISAR_PB.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="ISAR_PB.sln" Description="No Conversion Required">
+</Event></UpgradeLog>

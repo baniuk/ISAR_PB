@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_assembly_info_8cpp.html" title="TestProject1/AssemblyInfo.cpp" alt="" coords="5,80,208,107"/>
+<area shape="rect" id="node5" href="$_exception_test_8cpp.html" title="TestProject1/ExceptionTest.cpp" alt="" coords="233,80,439,107"/>
+<area shape="rect" id="node7" href="$_module_load_exception_handler_exception_test_8cpp.html" title="TestProject1/ModuleLoadExceptionHandlerExceptionTest.cpp" alt="" coords="464,80,843,107"/>
+<area shape="rect" id="node9" href="$_module_load_exception_test_8cpp.html" title="TestProject1/ModuleLoadExceptionTest.cpp" alt="" coords="867,80,1144,107"/>
+<area shape="rect" id="node11" href="$_module_uninitializer_test_8cpp.html" title="TestProject1/ModuleUninitializerTest.cpp" alt="" coords="1168,80,1427,107"/>
+<area shape="rect" id="node13" href="$_open_m_p_with_multiple_appdomains_exception_test_8cpp.html" title="TestProject1/OpenMPWithMultipleAppdomainsExceptionTest.cpp" alt="" coords="1451,80,1853,107"/>
+<area shape="rect" id="node15" href="$stdafx_8cpp.html" title="TestProject1/stdafx.cpp" alt="" coords="1878,80,2036,107"/>
+</map>

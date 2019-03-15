@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_IQI_Detect.mexw64"
+EXPORTS mexFunction

@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_TH_Niblack.mexw64"
+EXPORTS mexFunction

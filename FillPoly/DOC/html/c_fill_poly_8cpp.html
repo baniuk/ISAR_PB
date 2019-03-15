@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Dokumentacja pliku FillPoly/cFillPoly.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku FillPoly/cFillPoly.cpp</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_geom_8h_source.html">Geom.h</a>&quot;</code><br/>
+<code>#include &lt;fstream&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Wykres zależności załączania dla cFillPoly.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp__incl.png" border="0" usemap="#_fill_poly_2c_fill_poly_8cpp" alt=""/></div>
+<map name="_fill_poly_2c_fill_poly_8cpp" id="_fill_poly_2c_fill_poly_8cpp">
+<area shape="rect" id="node3" href="_geom_8h.html" title="Geom.h" alt="" coords="5,80,72,107"/></map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp__dep__incl.png" border="0" usemap="#_fill_poly_2c_fill_poly_8cppdep" alt=""/></div>
+<map name="_fill_poly_2c_fill_poly_8cppdep" id="_fill_poly_2c_fill_poly_8cppdep">
+<area shape="rect" id="node3" href="_fill_poly_8cpp.html" title="FillPoly/FillPoly.cpp" alt="" coords="5,80,141,107"/><area shape="rect" id="node5" href="mex_fill_poly_8cpp.html" title="mexFillPoly/mexFillPoly.cpp" alt="" coords="167,80,353,107"/></map>
+</div>
+</div>
+<p><a href="c_fill_poly_8cpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a">DefineLine2Points</a> (<a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *, <a class="el" href="struct_l_i_n_i_a.html">LINIA</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca współczynniki prostej przechodzacej przez dwa punkty.  <a href="#a0178de9e649b9fff7532f9f91344831a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678">Linspace</a> (double, double, double *, int)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generuje liniowo N wartości w przedziale &lt;a;b&gt;  <a href="#a2bbd1dd14c3bf8f643fa89df5f141678"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466">getSection</a> (<a class="el" href="struct_p_u_n_k_t.html">PUNKT</a>, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a>, <a class="el" href="struct_l_i_n_i_a.html">LINIA</a>, int, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca punkty leżące na zadanym odcinku.  <a href="#a1763d068b7ccfc35e78f716d381f1466"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010">LineCutsLine</a> (<a class="el" href="struct_l_i_n_i_a.html">LINIA</a> *, <a class="el" href="struct_l_i_n_i_a.html">LINIA</a> *, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">zwraca punkt przecięcia prostych  <a href="#a9f6cbbe60b963cb7fb8c056356798010"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205">FillPoly</a> (<a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *, unsigned int, unsigned int, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedura zwracająca punkty w zadanym polygonie.  <a href="#a2698770dd5223527e62275bd16a7c205"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#ae6763fcc5cf3fa460337dc977d9afcff">Linspace</a> (double x1, double x2, double *out, unsigned int N)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c_fill_poly_8cpp.html#a8a34ae0e3178178f3379183eb3a72bc4">getSection</a> (<a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> P0, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> P1, <a class="el" href="struct_l_i_n_i_a.html">LINIA</a> L, unsigned int N, <a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *out)</td></tr>
+</table>
+<hr/><h2>Dokumentacja funkcji</h2>
+<a class="anchor" id="a0178de9e649b9fff7532f9f91344831a"></a><!-- doxytag: member="cFillPoly.cpp::DefineLine2Points" ref="a0178de9e649b9fff7532f9f91344831a" args="(PUNKT *, PUNKT *, LINIA *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DefineLine2Points </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname"><em>P1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname"><em>P2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_l_i_n_i_a.html">LINIA</a> *&#160;</td>
+          <td class="paramname"><em>L</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Zwraca współczynniki prostej przechodzacej przez dwa punkty. </p>
+<p>Zwraca równanie prostej przechodzącej przez dwa punkty. Jeśli prosta jest pionowa to ustawiany jest znacznik pion, a współczynnik b ma wartość współrzędnej x punktów </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*P1</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*P2</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*L</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Zwraca:</b></dt><dd>void </dd></dl>
+
+<p>Definicja w linii <a class="el" href="c_fill_poly_8cpp_source.html#l00037">37</a> pliku <a class="el" href="c_fill_poly_8cpp_source.html">cFillPoly.cpp</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="_import_dump_file_8m_source.html#l00007">a</a>, <a class="el" href="_geom_8h_source.html#l00022">LINIA::a</a>, <a class="el" href="_geom_8h_source.html#l00023">LINIA::b</a>, <a class="el" href="_geom_8h_source.html#l00024">LINIA::pion</a>, <a class="el" href="_geom_8h_source.html#l00016">PUNKT::x</a> i <a class="el" href="_geom_8h_source.html#l00017">PUNKT::y</a>.</p>
+
+<p>Odwołania w <a class="el" href="c_fill_poly_8cpp_source.html#l00158">FillPoly()</a> i <a class="el" href="_fill_poly_8cpp_source.html#l00020">main()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Oto graf wywoływań tej funkcji:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a0178de9e649b9fff7532f9f91344831a_icgraph.png" border="0" usemap="#c_fill_poly_8cpp_a0178de9e649b9fff7532f9f91344831a_icgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a0178de9e649b9fff7532f9f91344831a_icgraph" id="c_fill_poly_8cpp_a0178de9e649b9fff7532f9f91344831a_icgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie." alt="" coords="182,56,247,83"/><area shape="rect" id="node5" href="_fill_poly_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="320,5,371,32"/><area shape="rect" id="node7" href="mex_fill_poly_8cpp.html#a6a215cbfde54f82a3ce599228fc3fce5" title="Funkcja wejściowa Matlaba." alt="" coords="297,56,394,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2698770dd5223527e62275bd16a7c205"></a><!-- doxytag: member="cFillPoly.cpp::FillPoly" ref="a2698770dd5223527e62275bd16a7c205" args="(PUNKT *, unsigned int, unsigned int, PUNKT *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FillPoly </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname"><em>p_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>ile_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname"><em>p_out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Procedura zwracająca punkty w zadanym polygonie. </p>
+<p>Główna procedura zwracająca punkty wewnątrz figury<br/>
+ FullName: FillPoly<br/>
+ Access: public <br/>
+ Główna procedura dokonująca podziału obszaru wyznaczonego przez wierzchołki w tablicy p_in na określoną ilość punktów równomiernie rozłożonych. </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*p_in</td><td>Tablica wierzchołków </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ile_w</td><td>Rozmiar tablicy p_in </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>Ilość punktówna każdy odcinek. W przypadku czterech wierzchołków calkowita ilość punktów wyniesie g*g </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*p_out</td><td>Tablica z punktami rozłożonymi na figurze o rozmiarze g*g </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Zwraca:</b></dt><dd>bool Zwraca true dla błędu i false dla jego braku </dd></dl>
+<dl class="note"><dt><b>Nota:</b></dt><dd>Ta wersja kodu zakłąda istnienie tylko czterech wierzchołków w polygonie!! Dla wersji o większej ilości mogą być problemy z kierunkami prostych </dd></dl>
+<p>&lt; Czemu tu jest na odwrót? Bo naprzeciwległe krawędzie musza być w tym samym kierunku </p>
+
+<p>Definicja w linii <a class="el" href="c_fill_poly_8cpp_source.html#l00158">158</a> pliku <a class="el" href="c_fill_poly_8cpp_source.html">cFillPoly.cpp</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="_import_dump_file_8m_source.html#l00007">a</a>, <a class="el" href="c_fill_poly_8cpp_source.html#l00037">DefineLine2Points()</a>, <a class="el" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466">getSection()</a> i <a class="el" href="c_fill_poly_8cpp_source.html#l00120">LineCutsLine()</a>.</p>
+
+<p>Odwołania w <a class="el" href="_fill_poly_8cpp_source.html#l00020">main()</a> i <a class="el" href="mex_fill_poly_8cpp_source.html#l00030">mexFunction()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Oto graf wywołań dla tej funkcji:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_cgraph.png" border="0" usemap="#c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_cgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_cgraph" id="c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_cgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty." alt="" coords="121,5,247,32"/><area shape="rect" id="node5" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku." alt="" coords="142,56,226,83"/><area shape="rect" id="node7" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010" title="zwraca punkt przecięcia prostych" alt="" coords="135,107,233,133"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Oto graf wywoływań tej funkcji:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_icgraph.png" border="0" usemap="#c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_icgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_icgraph" id="c_fill_poly_8cpp_a2698770dd5223527e62275bd16a7c205_icgraph">
+<area shape="rect" id="node3" href="_fill_poly_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="144,5,195,32"/><area shape="rect" id="node5" href="mex_fill_poly_8cpp.html#a6a215cbfde54f82a3ce599228fc3fce5" title="Funkcja wejściowa Matlaba." alt="" coords="121,56,218,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1763d068b7ccfc35e78f716d381f1466"></a><!-- doxytag: member="cFillPoly.cpp::getSection" ref="a1763d068b7ccfc35e78f716d381f1466" args="(PUNKT, PUNKT, LINIA, int, PUNKT *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getSection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_l_i_n_i_a.html">LINIA</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Zwraca punkty leżące na zadanym odcinku. </p>
+
+<p>Odwołania w <a class="el" href="c_fill_poly_8cpp_source.html#l00158">FillPoly()</a> i <a class="el" href="_fill_poly_8cpp_source.html#l00020">main()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Oto graf wywoływań tej funkcji:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a1763d068b7ccfc35e78f716d381f1466_icgraph.png" border="0" usemap="#c_fill_poly_8cpp_a1763d068b7ccfc35e78f716d381f1466_icgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a1763d068b7ccfc35e78f716d381f1466_icgraph" id="c_fill_poly_8cpp_a1763d068b7ccfc35e78f716d381f1466_icgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie." alt="" coords="139,56,205,83"/><area shape="rect" id="node5" href="_fill_poly_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="277,5,328,32"/><area shape="rect" id="node7" href="mex_fill_poly_8cpp.html#a6a215cbfde54f82a3ce599228fc3fce5" title="Funkcja wejściowa Matlaba." alt="" coords="254,56,351,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a34ae0e3178178f3379183eb3a72bc4"></a><!-- doxytag: member="cFillPoly.cpp::getSection" ref="a8a34ae0e3178178f3379183eb3a72bc4" args="(PUNKT P0, PUNKT P1, LINIA L, unsigned int N, PUNKT *out)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getSection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a>&#160;</td>
+          <td class="paramname"><em>P0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a>&#160;</td>
+          <td class="paramname"><em>P1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_l_i_n_i_a.html">LINIA</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Zwraca punkty na odcinku P0P1 należącym do linii L. </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P0</td><td>Punkt początkowy odcinka </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">P1</td><td>Punkt końcowy odcinka </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">L</td><td>Definicja linii na której lezy odcinek </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>Ilość punktów razem z P0 i P1 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*out</td><td>Tablica o rozmiarze N z punktami na odcinku </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Zwraca:</b></dt><dd>void </dd></dl>
+<dl class="warning"><dt><b>Ostrzeżenie:</b></dt><dd>Funkcja nie sprawdza czy punkty PUNKT::P0 i PUNKT::P1 należa do prostej LINIA::L, ważne są tylko koordynaty x tych punktów. Ma to znaczenie Tylko w przypadku linii pionowej </dd></dl>
+<p>&lt;Zakładam że punkty leżą na linii </p>
+
+<p>Definicja w linii <a class="el" href="c_fill_poly_8cpp_source.html#l00084">84</a> pliku <a class="el" href="c_fill_poly_8cpp_source.html">cFillPoly.cpp</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="_import_dump_file_8m_source.html#l00007">a</a>, <a class="el" href="_geom_8h_source.html#l00022">LINIA::a</a>, <a class="el" href="_geom_8h_source.html#l00023">LINIA::b</a>, <a class="el" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678">Linspace()</a>, <a class="el" href="_geom_8h_source.html#l00024">LINIA::pion</a>, <a class="el" href="_geom_8h_source.html#l00016">PUNKT::x</a> i <a class="el" href="_geom_8h_source.html#l00017">PUNKT::y</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Oto graf wywołań dla tej funkcji:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a8a34ae0e3178178f3379183eb3a72bc4_cgraph.png" border="0" usemap="#c_fill_poly_8cpp_a8a34ae0e3178178f3379183eb3a72bc4_cgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a8a34ae0e3178178f3379183eb3a72bc4_cgraph" id="c_fill_poly_8cpp_a8a34ae0e3178178f3379183eb3a72bc4_cgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a2bbd1dd14c3bf8f643fa89df5f141678" title="Generuje liniowo N wartości w przedziale &lt;a;b&gt;" alt="" coords="139,5,213,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f6cbbe60b963cb7fb8c056356798010"></a><!-- doxytag: member="cFillPoly.cpp::LineCutsLine" ref="a9f6cbbe60b963cb7fb8c056356798010" args="(LINIA *, LINIA *, PUNKT *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LineCutsLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_l_i_n_i_a.html">LINIA</a> *&#160;</td>
+          <td class="paramname"><em>L0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_l_i_n_i_a.html">LINIA</a> *&#160;</td>
+          <td class="paramname"><em>L1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_u_n_k_t.html">PUNKT</a> *&#160;</td>
+          <td class="paramname"><em>P</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>zwraca punkt przecięcia prostych </p>
+<p>FullName: LineCutsLine<br/>
+ Access: public <br/>
+ Zwraca punkt przecięcia dwóch linii. Jesli linie nie przecinają się wtedy P ma wartość nieokreśloną a funkcja zwraca false </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">L0</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">L1</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*P</td><td>Punkt przecięcia się linii </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Zwraca:</b></dt><dd>bool <ul>
+<li>true jesli linie się przecinają </li>
+<li>flase jeśli się nie przecinają i wtedy <a class="el" href="struct_p_u_n_k_t.html" title="Struktura opisująca punkt.">PUNKT</a> P ma wartość nieokresloną </li>
+</ul>
+</dd></dl>
+<dl class="warning"><dt><b>Ostrzeżenie:</b></dt><dd>Jeśli linie się pokryją to nie wiadomo co będzie </dd></dl>
+
+<p>Definicja w linii <a class="el" href="c_fill_poly_8cpp_source.html#l00120">120</a> pliku <a class="el" href="c_fill_poly_8cpp_source.html">cFillPoly.cpp</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="_geom_8h_source.html#l00022">LINIA::a</a>, <a class="el" href="_geom_8h_source.html#l00023">LINIA::b</a>, <a class="el" href="_geom_8h_source.html#l00024">LINIA::pion</a>, <a class="el" href="_geom_8h_source.html#l00016">PUNKT::x</a> i <a class="el" href="_geom_8h_source.html#l00017">PUNKT::y</a>.</p>
+
+<p>Odwołania w <a class="el" href="c_fill_poly_8cpp_source.html#l00158">FillPoly()</a> i <a class="el" href="_fill_poly_8cpp_source.html#l00020">main()</a>.</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Oto graf wywoływań tej funkcji:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a9f6cbbe60b963cb7fb8c056356798010_icgraph.png" border="0" usemap="#c_fill_poly_8cpp_a9f6cbbe60b963cb7fb8c056356798010_icgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a9f6cbbe60b963cb7fb8c056356798010_icgraph" id="c_fill_poly_8cpp_a9f6cbbe60b963cb7fb8c056356798010_icgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie." alt="" coords="153,56,218,83"/><area shape="rect" id="node5" href="_fill_poly_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="291,5,341,32"/><area shape="rect" id="node7" href="mex_fill_poly_8cpp.html#a6a215cbfde54f82a3ce599228fc3fce5" title="Funkcja wejściowa Matlaba." alt="" coords="267,56,365,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2bbd1dd14c3bf8f643fa89df5f141678"></a><!-- doxytag: member="cFillPoly.cpp::Linspace" ref="a2bbd1dd14c3bf8f643fa89df5f141678" args="(double, double, double *, int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Linspace </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generuje liniowo N wartości w przedziale &lt;a;b&gt; </p>
+
+<p>Odwołania w <a class="el" href="c_fill_poly_8cpp_source.html#l00084">getSection()</a> i <a class="el" href="_fill_poly_8cpp_source.html#l00020">main()</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Oto graf wywoływań tej funkcji:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="c_fill_poly_8cpp_a2bbd1dd14c3bf8f643fa89df5f141678_icgraph.png" border="0" usemap="#c_fill_poly_8cpp_a2bbd1dd14c3bf8f643fa89df5f141678_icgraph" alt=""/></div>
+<map name="c_fill_poly_8cpp_a2bbd1dd14c3bf8f643fa89df5f141678_icgraph" id="c_fill_poly_8cpp_a2bbd1dd14c3bf8f643fa89df5f141678_icgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a8a34ae0e3178178f3379183eb3a72bc4" title="getSection" alt="" coords="129,5,213,32"/><area shape="rect" id="node5" href="_fill_poly_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="145,56,196,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6763fcc5cf3fa460337dc977d9afcff"></a><!-- doxytag: member="cFillPoly.cpp::Linspace" ref="ae6763fcc5cf3fa460337dc977d9afcff" args="(double x1, double x2, double *out, unsigned int N)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Linspace </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Generuje liniowo rozłożone wartości pomiędzy zadanymi. Wartości krańcowe zawierają się w zbiorze wyjściowym.* </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x1</td><td>Wartość począkowa </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x2</td><td>Wartość końcowa </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*out</td><td>Wektor z wartościami wyjściowymi o rozmiarze N </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>Ilość punktów pomiędzy x1 i x2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Zwraca:</b></dt><dd>void </dd></dl>
+
+<p>Definicja w linii <a class="el" href="c_fill_poly_8cpp_source.html#l00064">64</a> pliku <a class="el" href="c_fill_poly_8cpp_source.html">cFillPoly.cpp</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="_import_dump_file_8m_source.html#l00007">a</a>.</p>
+
+</div>
+</div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_GetProfile.mexw64"
+EXPORTS mexFunction

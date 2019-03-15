@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Plik źródłowy SDK/C_DumpAll.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">SDK/C_DumpAll.h</div>  </div>
+</div>
+<div class="contents">
+<a href="_c___dump_all_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;crtdbg.h&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="_c___matrix___container_8h.html">C_Matrix_Container.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="c__image__container_8h.html">C_Image_Container.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_c___error_8h.html">C_Error.h</a>&quot;</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">00009</a> <span class="preprocessor">#define MAX_ENTRY 256</span>
+<a name="l00010"></a><a class="code" href="_c___dump_all_8h.html#a8747af38b86aa2bbcda2f1b1aa0888c2">00010</a> <span class="preprocessor"></span><span class="preprocessor">#define DOUBLE 1</span>
+<a name="l00011"></a><a class="code" href="_c___dump_all_8h.html#a6f41f1cda9345d127d86658eb0d45770">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define C_MATRIX 2</span>
+<a name="l00012"></a><a class="code" href="_c___dump_all_8h.html#a5a3e65bae257d28620da54d3ed549442">00012</a> <span class="preprocessor"></span><span class="preprocessor">#define C_IMAGE 3</span>
+<a name="l00013"></a><a class="code" href="_c___dump_all_8h.html#ae8690abbffa85934d64d545920e2b108">00013</a> <span class="preprocessor"></span><span class="preprocessor">#define FLOAT 4</span>
+<a name="l00014"></a>00014 <span class="preprocessor"></span>
+<a name="l00015"></a><a class="code" href="class_c___dump_all.html">00015</a> <span class="keyword">class </span><a class="code" href="class_c___dump_all.html">C_DumpAll</a>
+<a name="l00016"></a>00016 {
+<a name="l00017"></a>00017 <span class="keyword">public</span>:
+<a name="l00018"></a>00018         <a class="code" href="class_c___dump_all.html#aa102b74cb1617f552476d55c1fcd206f">C_DumpAll</a>(<span class="keywordtype">char</span>* filename);
+<a name="l00019"></a>00019         <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">AddEntry</a>(<span class="keywordtype">double</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">char</span>* name);
+<a name="l00020"></a>00020         <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">AddEntry</a>(<span class="keywordtype">float</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <span class="keywordtype">char</span>* name);
+<a name="l00021"></a>00021         <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">AddEntry</a>(<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a>* data, <span class="keywordtype">char</span>* name);
+<a name="l00022"></a>00022         <span class="keywordtype">void</span> <a class="code" href="class_c___dump_all.html#a582b50c1ecfd18c3416dc36d2bf1eb54">AddEntry</a>(<a class="code" href="class_c___image___container.html">C_Image_Container</a>* data, <span class="keywordtype">char</span>* name);
+<a name="l00023"></a>00023         <a class="code" href="class_c___dump_all.html#a88e6ad8e1e407459db1489ca9693d9e0">~C_DumpAll</a>(<span class="keywordtype">void</span>);
+<a name="l00024"></a>00024 <span class="keyword">private</span>:
+<a name="l00025"></a><a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">00025</a>         FILE *<a class="code" href="class_c___dump_all.html#abea8c84b6f1a1e7c9d7405a2014861e8">stream</a>;
+<a name="l00026"></a><a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">00026</a>         <span class="keywordtype">bool</span> <a class="code" href="class_c___dump_all.html#a4124683375e11e5b4b212e418fc40a5a">openfileerror</a>;
+<a name="l00027"></a><a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">00027</a>         <span class="keywordtype">int</span> <a class="code" href="class_c___dump_all.html#ad19e4c6d2cd627d710217f95b239c3d3">lastpozindex</a>;                               <span class="comment">//index ostatniego wpisu w offset</span>
+<a name="l00028"></a><a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">00028</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_c___dump_all.html#a221f37adec5a2c1c16f00b2a1f74a444">offset</a>[<a class="code" href="_c___dump_all_8h.html#a5b1d89d3b032a967e0b63fb12d1121ed">MAX_ENTRY</a>]; <span class="comment">//offsety kolejnych wpisów</span>
+<a name="l00029"></a>00029 };
+</pre></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

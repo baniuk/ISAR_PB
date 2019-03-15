@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Plik źródłowy SDK/C_Image_Container.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">SDK/C_Image_Container.cpp</div>  </div>
+</div>
+<div class="contents">
+<a href="_c___image___container_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="c__image__container_8h.html">C_Image_Container.h</a>&quot;</span>
+<a name="l00002"></a>00002 <span class="comment">//#endif</span>
+<a name="l00003"></a>00003 <span class="comment">// Ver 1.3.1 by PB</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a><a class="code" href="class_c___image___container.html#ac9bde7628235226487f37cd29d37ad3c">00005</a> <a class="code" href="class_c___image___container.html#ac9bde7628235226487f37cd29d37ad3c">C_Image_Container::C_Image_Container</a>(<span class="keywordtype">void</span>)
+<a name="l00006"></a>00006 {
+<a name="l00007"></a>00007 <span class="comment">//      data = NULL;</span>
+<a name="l00008"></a>00008         <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a> = NULL;
+<a name="l00009"></a>00009         <a class="code" href="class_c___image___container.html#add17dc4e84b32f32f5953a13a22c3825">isBinary</a> = FALSE;
+<a name="l00010"></a>00010         <a class="code" href="class_c___image___container.html#a64157855376044fa3d134d814941145f">xorigin</a> = <a class="code" href="class_c___image___container.html#aa284e7476dccf0796a4233d62db46c06">yorigin</a> = 0;
+<a name="l00011"></a>00011 <span class="comment">//      header = NULL;</span>
+<a name="l00012"></a>00012         <a class="code" href="class_c___image___container.html#aa47519fac65b410493f1d99b43d25a8d">header_size</a> = 0;
+<a name="l00013"></a>00013 }
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="class_c___image___container.html#a0286334a119808cb2e595badb1abb0d6">00015</a> <a class="code" href="class_c___image___container.html#a0286334a119808cb2e595badb1abb0d6">C_Image_Container::~C_Image_Container</a>(<span class="keywordtype">void</span>)
+<a name="l00016"></a>00016 {
+<a name="l00017"></a>00017         <a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>);
+<a name="l00018"></a>00018 <span class="comment">//      SAFE_DELETE(header);</span>
+<a name="l00019"></a>00019 }
+<a name="l00020"></a><a class="code" href="class_c___image___container.html#ac34afa7ae06aaa7bb2602260bf707adf">00020</a> <span class="keywordtype">char</span>* <a class="code" href="class_c___image___container.html#ac34afa7ae06aaa7bb2602260bf707adf">C_Image_Container::ReturnIPLBuffor</a>(<span class="keywordtype">void</span>)
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> licznik, licznikdata;
+<a name="l00023"></a>00023         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> reszta;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025         licznik = 0;
+<a name="l00026"></a>00026         licznikdata = 0;
+<a name="l00027"></a>00027         <a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>);
+<a name="l00028"></a>00028         <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a> = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>*2*<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>];
+<a name="l00029"></a>00029         <span class="keywordflow">do</span>      {
+<a name="l00030"></a>00030                 reszta = (<span class="keywordtype">unsigned</span> short)<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[licznikdata] % 256;
+<a name="l00031"></a>00031                 <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>[licznik] = (char)reszta;
+<a name="l00032"></a>00032                 <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>[licznik+1] = (char)(((<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>)<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[licznikdata++] - reszta)/256);
+<a name="l00033"></a>00033                 licznik += 2;
+<a name="l00034"></a>00034         } <span class="keywordflow">while</span>(licznik&lt;<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>*2*<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>);
+<a name="l00035"></a>00035         <span class="keywordflow">return</span> <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>;
+<a name="l00036"></a>00036 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="class_c___image___container.html#a021b8195022ddb71436ad90157fec304">00038</a> <span class="keywordtype">char</span>* <a class="code" href="class_c___image___container.html#ac34afa7ae06aaa7bb2602260bf707adf">C_Image_Container::ReturnIPLBuffor</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> w1, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> w2)
+<a name="l00039"></a>00039 {
+<a name="l00040"></a>00040         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> licznik, licznikdata;
+<a name="l00041"></a>00041         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> reszta;
+<a name="l00042"></a>00042         <a class="code" href="class_c___image___container.html">C_Image_Container</a> tmp;
+<a name="l00043"></a>00043         this-&gt;<a class="code" href="class_c___image___container.html#a02001a6d0aabe4eb8e4d9797798622c0">CloneObject</a>(&amp;tmp);
+<a name="l00044"></a>00044         tmp.<a class="code" href="class_c___image___container.html#aca10ff18fcbe05d4c8cc63005ca80928">Normalize</a>(w1,w2);
+<a name="l00045"></a>00045         licznik = 0;
+<a name="l00046"></a>00046         licznikdata = 0;
+<a name="l00047"></a>00047         <a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>);
+<a name="l00048"></a>00048         <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a> = <span class="keyword">new</span> <span class="keywordtype">char</span>[tmp.<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>*2*tmp.<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>];
+<a name="l00049"></a>00049         <span class="keywordflow">do</span>      {
+<a name="l00050"></a>00050                 reszta = (<span class="keywordtype">unsigned</span> short)tmp.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[licznikdata] % 256;
+<a name="l00051"></a>00051                 _ASSERT(licznik&lt;tmp.<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>*2*tmp.<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>);
+<a name="l00052"></a>00052                 <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>[licznik] = (char)reszta;
+<a name="l00053"></a>00053                 _ASSERT(licznik+1&lt;tmp.<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>*2*tmp.<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>);
+<a name="l00054"></a>00054                 <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>[licznik+1] = (char)(((<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>)tmp.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[licznikdata++] - reszta)/256);
+<a name="l00055"></a>00055                 licznik += 2;
+<a name="l00056"></a>00056         } <span class="keywordflow">while</span>(licznik&lt;tmp.<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>*2*tmp.<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>);
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> <a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>;
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="class_c___image___container.html#aca10ff18fcbe05d4c8cc63005ca80928">00060</a> <span class="keywordtype">void</span> <a class="code" href="class_c___image___container.html#aca10ff18fcbe05d4c8cc63005ca80928">C_Image_Container::Normalize</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> w1, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> w2)
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062 <span class="preprocessor">        #ifdef _DEBUG</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span>        <span class="keywordflow">if</span>(<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>==NULL)
+<a name="l00064"></a>00064                 _RPTF0(_CRT_ASSERT, <span class="stringliteral">&quot;Matrix not initialized!!\n&quot;</span>);
+<a name="l00065"></a>00065 <span class="preprocessor">        #endif</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>        <span class="keywordtype">double</span> min, max, delta;
+<a name="l00067"></a>00067         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> r;
+<a name="l00068"></a>00068         <a class="code" href="class_c___matrix___container.html#a73c44a9a581fb814e6f6c58d6e355d42">getMinMax</a>(min,max);
+<a name="l00069"></a>00069         <span class="keywordflow">if</span>(min==max)
+<a name="l00070"></a>00070                 <span class="keywordflow">return</span>;
+<a name="l00071"></a>00071         <span class="keywordflow">if</span>(min==w1 &amp;&amp; max==w2)
+<a name="l00072"></a>00072                 <span class="keywordflow">return</span>;                         <span class="comment">// bez normalizacji</span>
+<a name="l00073"></a>00073         delta = abs(w2-w1);
+<a name="l00074"></a>00074         <span class="keywordflow">for</span>(r=0;r&lt;<a class="code" href="class_c___matrix___container.html#a04b69dcdd05624842f65392ee64d0197">GetNumofElements</a>();r++)
+<a name="l00075"></a>00075                 <a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[r] = delta*<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[r]/(max-min)-min*delta/(max-min);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="class_c___image___container.html#a0453772c5415b4b2e4dde645eb48e1ab">00079</a> <span class="keywordtype">void</span> <a class="code" href="class_c___image___container.html#a0453772c5415b4b2e4dde645eb48e1ab">C_Image_Container::Hist</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> val,<a class="code" href="class_c___matrix___container.html">C_Matrix_Container</a> &amp;out)
+<a name="l00080"></a>00080 {
+<a name="l00081"></a>00081 <span class="preprocessor">        #ifdef _DEBUG</span>
+<a name="l00082"></a>00082 <span class="preprocessor"></span>        <span class="keywordflow">if</span>(<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>==NULL)
+<a name="l00083"></a>00083                 _RPTF0(_CRT_ASSERT, <span class="stringliteral">&quot;Matrix not initialized!!\n&quot;</span>);
+<a name="l00084"></a>00084 <span class="preprocessor">        #endif</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="comment">//      C_Matrix_Container out;</span>
+<a name="l00086"></a>00086 <span class="comment">//      double min, max;</span>
+<a name="l00087"></a>00087         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>;
+<a name="l00088"></a>00088         <span class="keywordtype">double</span> delta,tmpval;
+<a name="l00089"></a>00089         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> start,l,ll,licznik;
+<a name="l00090"></a>00090 <span class="comment">//      getMinMax(min,max);</span>
+<a name="l00091"></a>00091         <a class="code" href="class_c___image___container.html">C_Image_Container</a> tmp;
+<a name="l00092"></a>00092         <a class="code" href="class_c___image___container.html">C_Image_Container</a> tmpout;;
+<a name="l00093"></a>00093         <a class="code" href="class_c___image___container.html#a02001a6d0aabe4eb8e4d9797798622c0">CloneObject</a>(&amp;tmp);
+<a name="l00094"></a>00094         out.<a class="code" href="class_c___matrix___container.html#ac52fe2a955352b6fa3924806c085d106">AllocateData</a>(1,val);
+<a name="l00095"></a>00095         out.<a class="code" href="class_c___matrix___container.html#a57f2e83d6ff9b668a14ecd2d808cbed8">Zeros</a>();
+<a name="l00096"></a>00096         <span class="keywordflow">if</span>(val!=65536)  {
+<a name="l00097"></a>00097                 tmpout.<a class="code" href="class_c___matrix___container.html#ac52fe2a955352b6fa3924806c085d106">AllocateData</a>(1,65536);
+<a name="l00098"></a>00098                 tmpout.<a class="code" href="class_c___matrix___container.html#a57f2e83d6ff9b668a14ecd2d808cbed8">Zeros</a>();
+<a name="l00099"></a>00099                 <span class="keywordflow">for</span>(a=0;a&lt;<a class="code" href="class_c___matrix___container.html#a04b69dcdd05624842f65392ee64d0197">GetNumofElements</a>();a++)
+<a name="l00100"></a>00100                         tmpout.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>)tmp.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>]]+=1;
+<a name="l00101"></a>00101                 delta = floor(65535.0/val);
+<a name="l00102"></a>00102                 licznik = 0;
+<a name="l00103"></a>00103                 ll = 0;
+<a name="l00104"></a>00104                 start = 0;
+<a name="l00105"></a>00105                 <span class="keywordflow">do</span>      {
+<a name="l00106"></a>00106                         tmpval = 0;
+<a name="l00107"></a>00107                         <span class="keywordflow">for</span>(l=start;l&lt;start+delta;l++)
+<a name="l00108"></a>00108                                 tmpval += tmpout.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[l];
+<a name="l00109"></a>00109                         out.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[licznik++] = tmpval/delta;
+<a name="l00110"></a>00110                         start += (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>)delta;
+<a name="l00111"></a>00111                         ll++;
+<a name="l00112"></a>00112                 } <span class="keywordflow">while</span>(ll&lt;val);
+<a name="l00113"></a>00113         }
+<a name="l00114"></a>00114         <span class="keywordflow">else</span>    {
+<a name="l00115"></a>00115                 <span class="keywordflow">for</span>(a=0;a&lt;<a class="code" href="class_c___matrix___container.html#a04b69dcdd05624842f65392ee64d0197">GetNumofElements</a>();a++)
+<a name="l00116"></a>00116                         out.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>)tmp.<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>[<a class="code" href="_import_dump_file_8m.html#a66566eaa23512e994bfb3ba8661f9fce">a</a>]]+=1;
+<a name="l00117"></a>00117         }
+<a name="l00118"></a>00118 <span class="comment">//      return out;</span>
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 }
+<a name="l00121"></a><a class="code" href="class_c___image___container.html#a02001a6d0aabe4eb8e4d9797798622c0">00121</a> <span class="keywordtype">void</span> <a class="code" href="class_c___image___container.html#a02001a6d0aabe4eb8e4d9797798622c0">C_Image_Container::CloneObject</a>(<a class="code" href="class_c___image___container.html">C_Image_Container</a>* dest)
+<a name="l00122"></a>00122 {
+<a name="l00123"></a>00123 <span class="preprocessor">        #ifdef _DEBUG</span>
+<a name="l00124"></a>00124 <span class="preprocessor"></span>        <span class="keywordflow">if</span>(<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>==NULL)
+<a name="l00125"></a>00125                 _RPTF0(_CRT_ASSERT, <span class="stringliteral">&quot;Matrix not initialized!!\n&quot;</span>);
+<a name="l00126"></a>00126 <span class="preprocessor">        #endif</span>
+<a name="l00127"></a>00127 <span class="preprocessor"></span>        dest-&gt;<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a> = <a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>;
+<a name="l00128"></a>00128         dest-&gt;<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a> = <a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>;
+<a name="l00129"></a>00129         dest-&gt;<a class="code" href="class_c___image___container.html#add17dc4e84b32f32f5953a13a22c3825">isBinary</a> = <a class="code" href="class_c___image___container.html#add17dc4e84b32f32f5953a13a22c3825">isBinary</a>;
+<a name="l00130"></a>00130         dest-&gt;<a class="code" href="class_c___image___container.html#a20a0fd786190e1576db06a2866df3931">FreeData</a>();
+<a name="l00131"></a>00131         dest-&gt;<a class="code" href="class_c___matrix___container.html#ac52fe2a955352b6fa3924806c085d106">AllocateData</a>(dest-&gt;<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>,dest-&gt;<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>);
+<a name="l00132"></a>00132 <span class="comment">//      InheritProperties(dest);</span>
+<a name="l00133"></a>00133         memcpy(dest-&gt;<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>,<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*dest-&gt;<a class="code" href="class_c___matrix___container.html#adf66ed5bb65d0104de739657da9402ed">_rows</a>*dest-&gt;<a class="code" href="class_c___matrix___container.html#a1fb0d94fc310e8cb0aef09fe817db8b4">_cols</a>);
+<a name="l00134"></a>00134 }
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136 <span class="comment">/*void C_Image_Container::InheritProperties(C_Image_Container* dest)</span>
+<a name="l00137"></a>00137 <span class="comment">{</span>
+<a name="l00138"></a>00138 <span class="comment">        if(header!=NULL)        {</span>
+<a name="l00139"></a>00139 <span class="comment">                dest-&gt;CreateHeaderBuffor(header_size);</span>
+<a name="l00140"></a>00140 <span class="comment">                memcpy(dest-&gt;header,header,sizeof(char)*dest-&gt;header_size);</span>
+<a name="l00141"></a>00141 <span class="comment">        } else</span>
+<a name="l00142"></a>00142 <span class="comment">                dest-&gt;header = NULL;</span>
+<a name="l00143"></a>00143 <span class="comment">}*/</span>
+<a name="l00144"></a>00144 
+<a name="l00145"></a><a class="code" href="class_c___image___container.html#a6d456f756c72739b0280f2ae07796bec">00145</a> <span class="keywordtype">void</span> <a class="code" href="class_c___image___container.html#a6d456f756c72739b0280f2ae07796bec">C_Image_Container::CreateHeaderBuffor</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size)
+<a name="l00146"></a>00146 {
+<a name="l00147"></a>00147         <a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code" href="class_c___image___container.html#a235e56d6f7e79f21976fe167936fee46">header</a>);    
+<a name="l00148"></a>00148         <a class="code" href="class_c___image___container.html#a235e56d6f7e79f21976fe167936fee46">header</a> = <span class="keyword">new</span> <span class="keywordtype">char</span>[size];
+<a name="l00149"></a>00149         <a class="code" href="class_c___image___container.html#aa47519fac65b410493f1d99b43d25a8d">header_size</a> = size;
+<a name="l00150"></a>00150 }
+<a name="l00151"></a>00151 
+<a name="l00152"></a><a class="code" href="class_c___image___container.html#a20a0fd786190e1576db06a2866df3931">00152</a> <span class="keywordtype">void</span> <a class="code" href="class_c___image___container.html#a20a0fd786190e1576db06a2866df3931">C_Image_Container::FreeData</a>(<span class="keywordtype">void</span>)
+<a name="l00153"></a>00153 {
+<a name="l00154"></a>00154         <a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>((<span class="keywordtype">double</span>*)<a class="code" href="class_c___matrix___container.html#a127db01348cfd0f25cacce210c6f2825">data</a>);
+<a name="l00155"></a>00155 <span class="comment">//      SAFE_DELETE(header);</span>
+<a name="l00156"></a>00156         <a class="code" href="_c___matrix___container_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code" href="class_c___image___container.html#a19a8a8b8759b14f700ee52caf283b318">_iplbuffor</a>);
+<a name="l00157"></a>00157 }
+</pre></div></div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

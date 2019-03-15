@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>FillPoly: Dokumentacja pliku mexFillPoly/mexFillPoly.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">FillPoly
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.5.1 -->
+<script type="text/javascript" src="dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku mexFillPoly/mexFillPoly.cpp</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><code>#include &lt;mex.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="c_fill_poly_8cpp_source.html">cFillPoly.cpp</a>&gt;</code><br/>
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Wykres zależności załączania dla mexFillPoly.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="mex_fill_poly_8cpp__incl.png" border="0" usemap="#mex_fill_poly_2mex_fill_poly_8cpp" alt=""/></div>
+<map name="mex_fill_poly_2mex_fill_poly_8cpp" id="mex_fill_poly_2mex_fill_poly_8cpp">
+<area shape="rect" id="node5" href="c_fill_poly_8cpp.html" title="cFillPoly.cpp" alt="" coords="102,80,199,107"/><area shape="rect" id="node7" href="_geom_8h.html" title="Geom.h" alt="" coords="26,155,93,181"/></map>
+</div>
+</div>
+<p><a href="mex_fill_poly_8cpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mex_fill_poly_8cpp.html#af83a0ad9d707a0bc5fe281b6e5c358a1">DllExport</a>&#160;&#160;&#160;__declspec( dllexport )</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definicja eksportu. Zakładam podejście bez pliku def. Eksport z kodu źródłowego za pomocą makra MS.  <a href="#af83a0ad9d707a0bc5fe281b6e5c358a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mex_fill_poly_8cpp.html#a506b3685b3eb05aac751f9e14cbed93b">SAFE_DELETE_ARRAY</a>(p)&#160;&#160;&#160;{ if(p) { delete[] (p);   (p)=NULL; } }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Makro do kasowania tablic.  <a href="#a506b3685b3eb05aac751f9e14cbed93b"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mex_fill_poly_8cpp.html#a6a215cbfde54f82a3ce599228fc3fce5">mexFunction</a> (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wejściowa Matlaba.  <a href="#a6a215cbfde54f82a3ce599228fc3fce5"></a><br/></td></tr>
+</table>
+<hr/><h2>Dokumentacja definicji</h2>
+<a class="anchor" id="af83a0ad9d707a0bc5fe281b6e5c358a1"></a><!-- doxytag: member="mexFillPoly.cpp::DllExport" ref="af83a0ad9d707a0bc5fe281b6e5c358a1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DllExport&#160;&#160;&#160;__declspec( dllexport )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definicja eksportu. Zakładam podejście bez pliku def. Eksport z kodu źródłowego za pomocą makra MS. </p>
+
+<p>Definicja w linii <a class="el" href="mex_fill_poly_8cpp_source.html#l00017">17</a> pliku <a class="el" href="mex_fill_poly_8cpp_source.html">mexFillPoly.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a506b3685b3eb05aac751f9e14cbed93b"></a><!-- doxytag: member="mexFillPoly.cpp::SAFE_DELETE_ARRAY" ref="a506b3685b3eb05aac751f9e14cbed93b" args="(p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAFE_DELETE_ARRAY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p</td><td>)</td>
+          <td>&#160;&#160;&#160;{ if(p) { delete[] (p);   (p)=NULL; } }</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Makro do kasowania tablic. </p>
+
+<p>Definicja w linii <a class="el" href="mex_fill_poly_8cpp_source.html#l00020">20</a> pliku <a class="el" href="mex_fill_poly_8cpp_source.html">mexFillPoly.cpp</a>.</p>
+
+<p>Odwołania w <a class="el" href="mex_fill_poly_8cpp_source.html#l00030">mexFunction()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Dokumentacja funkcji</h2>
+<a class="anchor" id="a6a215cbfde54f82a3ce599228fc3fce5"></a><!-- doxytag: member="mexFillPoly.cpp::mexFunction" ref="a6a215cbfde54f82a3ce599228fc3fce5" args="(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mexFunction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nlhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mxArray *&#160;</td>
+          <td class="paramname"><em>plhs</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mxArray *&#160;</td>
+          <td class="paramname"><em>prhs</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Funkcja wejściowa Matlaba. </p>
+<p>Główna funkcja eksportowa, zgodna z dokumentacją Matlaba </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nlhs</td><td>ilość parametrów wyjściowych przekazanych z Matlaba </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">plhs</td><td>wskaźnik na parametry wyjściowe </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nrhs</td><td>ilość parametrów wejściowych przekazanych z Matlaba </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prhs</td><td>wskaźnik na parametry wejściowe </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Parametry przekazywane z Matlaba to:<br/>
+ </p>
+<ul>
+<li>Tablica punktów do sprawdzenia w formacie xp, yp (osobno)<br/>
+ </li>
+<li>Ilość punktów na krawędź. Całkowita ilość punktów zwróconych to N^2<br/>
+ <b> Składnia wywołania w MAtlabie:</b><br/>
+ <div class="fragment"><pre class="fragment"> out = <a class="code" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie.">FillPoly</a>(xp,yp,N)
+</pre></div> <dl class="return"><dt><b>Zwraca:</b></dt><dd>Tablica [Nx2] ze współrzędnymi punktów które leżą wewnątrz figury </dd></dl>
+<dl class="warning"><dt><b>Ostrzeżenie:</b></dt><dd>Wierzchołki musza być w określonej kolejności CW lub CCW. NA chwilę obecną tylko 4 sa wspierane. Współrzędne punktów muszą być w kolumnach<br/>
+</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Do zrobienia:</a></b></dt><dd>Obsługa błędów tutaj </dd></dl>
+</li>
+</ul>
+
+<p>Definicja w linii <a class="el" href="mex_fill_poly_8cpp_source.html#l00030">30</a> pliku <a class="el" href="mex_fill_poly_8cpp_source.html">mexFillPoly.cpp</a>.</p>
+
+<p>Odwołuje się do <a class="el" href="c_fill_poly_8cpp_source.html#l00158">FillPoly()</a>, <a class="el" href="mex_fill_poly_8cpp_source.html#l00020">SAFE_DELETE_ARRAY</a>, <a class="el" href="_geom_8h_source.html#l00016">PUNKT::x</a> i <a class="el" href="_geom_8h_source.html#l00017">PUNKT::y</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Oto graf wywołań dla tej funkcji:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="mex_fill_poly_8cpp_a6a215cbfde54f82a3ce599228fc3fce5_cgraph.png" border="0" usemap="#mex_fill_poly_8cpp_a6a215cbfde54f82a3ce599228fc3fce5_cgraph" alt=""/></div>
+<map name="mex_fill_poly_8cpp_a6a215cbfde54f82a3ce599228fc3fce5_cgraph" id="mex_fill_poly_8cpp_a6a215cbfde54f82a3ce599228fc3fce5_cgraph">
+<area shape="rect" id="node3" href="c_fill_poly_8cpp.html#a2698770dd5223527e62275bd16a7c205" title="Procedura zwracająca punkty w zadanym polygonie." alt="" coords="153,56,218,83"/><area shape="rect" id="node5" href="c_fill_poly_8cpp.html#a0178de9e649b9fff7532f9f91344831a" title="Zwraca współczynniki prostej przechodzacej przez dwa punkty." alt="" coords="267,5,394,32"/><area shape="rect" id="node7" href="c_fill_poly_8cpp.html#a1763d068b7ccfc35e78f716d381f1466" title="Zwraca punkty leżące na zadanym odcinku." alt="" coords="289,56,373,83"/><area shape="rect" id="node9" href="c_fill_poly_8cpp.html#a9f6cbbe60b963cb7fb8c056356798010" title="zwraca punkt przecięcia prostych" alt="" coords="282,107,379,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div>
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Tue Nov 29 2011 22:49:24 dla FillPoly programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.5.1
+</small></address>
+
+</body>
+</html>

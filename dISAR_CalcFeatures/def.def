@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_CalcFeatures.mexw64"
+EXPORTS mexFunction

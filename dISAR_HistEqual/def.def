@@ -1,0 +1,2 @@
+LIBRARY	"dISAR_HistEqual.mexw64"
+EXPORTS mexFunction
